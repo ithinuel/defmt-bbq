@@ -20,10 +20,7 @@ version = "0.1.0"
 [dependencies]
 cortex-m = "0.7"
 defmt = "0.3"
-
-[dependencies.bbqueue]
-version = "0.5.1"
-features = ["defmt_0_3"]
+bbqueue = { version = "0.5.1", features = ["defmt"] }
 
 [features]
 default = [
@@ -38,3 +35,6 @@ default = [
     # error condition.
     "defmt/encoding-rzcobs"
 ]
+
+[patch.crates-io]
+bbqueue = { git = "https://github.com/ithinuel/bbqueue", branch = "use-portable-atomic" }
